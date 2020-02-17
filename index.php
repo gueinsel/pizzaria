@@ -3,7 +3,7 @@
 <main>
     <section>
         <div class="container">
-            <form id="pedirForm" action="./adicionar-pedido.php" method="post">
+            <form id="pedirForm" action="./adicionar-pedido" method="post">
 
 <h2>Faça seu pedido aqui</h2>
 
@@ -21,7 +21,7 @@
             $resultadosSabores = mysqli_query($conectar, $consultaSabores);
             while($linhas = mysqli_fetch_assoc($resultadosSabores)):
         ?>
-        <input data-custo="<?= $linhas['valor'] ?>" type="checkbox" value="<?= $linhas['recheio'] ?>" name="sabor[]" id="sabor<?= $linhas['id'] ?>">
+        <input data-custo="<?= $linhas['valor'] ?>" type="checkbox" required value="<?= $linhas['recheio'] ?>" name="sabor[]" id="sabor<?= $linhas['id'] ?>">
         <label class="col-lg-6" for="sabor<?= $linhas['id'] ?>">
             <div class="card">
                 <div class="icon">
@@ -119,7 +119,7 @@
             $resultadosAdicionais = mysqli_query($conectar, $consultaAdicionais);
             while($linhas = mysqli_fetch_assoc($resultadosAdicionais)):
         ?>
-        <input data-custo="<?= $linhas['valor'] ?>" type="checkbox" value="<?= $linhas['nome'] ?>" name="adicional[]" id="adicional<?= $linhas['id'] ?>">
+        <input data-custo="<?= $linhas['valor'] ?>" type="checkbox" required value="<?= $linhas['nome'] ?>" name="adicional[]" id="adicional<?= $linhas['id'] ?>">
         <label class="col-lg-6" for="adicional<?= $linhas['id'] ?>">
             <div class="card">
                 <div class="icon">
@@ -163,7 +163,7 @@
             $resultadosBebidas = mysqli_query($conectar, $consultaBebidas);
             while($linhas = mysqli_fetch_assoc($resultadosBebidas)):
         ?>
-        <input data-custo="<?= $linhas['valor'] ?>" type="checkbox" value="<?= $linhas['nome'] ?>" name="bebida[]" id="bebida<?= $linhas['id'] ?>">
+        <input data-custo="<?= $linhas['valor'] ?>" type="checkbox" required value="<?= $linhas['nome'] ?>" name="bebida[]" id="bebida<?= $linhas['id'] ?>">
         <label class="col-lg-6" for="bebida<?= $linhas['id'] ?>">
             <div class="card">
                 <div class="icon">
@@ -321,8 +321,8 @@
 
 <div style="overflow:auto;">
   <div style="text-align:center;">
-    <button type="button" class="btn-pizzaria" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-    <button type="button" class="btn-pizzaria" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    <button type="button" class="btn-pizzaria" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
+    <button type="button" class="btn-pizzaria" id="nextBtn" onclick="nextPrev(1)">Próximo</button>
   </div>
 </div>
 

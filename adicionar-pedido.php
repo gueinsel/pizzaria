@@ -44,27 +44,33 @@
                 <div class="info row">
                    <div class="sabores col-lg-6">
                         Sabores de pizza : <br>
-                    <?php foreach ($sabores as $sabor) { ?>
+                        <?php if(!empty($sabores)): ?>
+                            <?php foreach ($sabores as $sabor) { ?>
                         <input type="text" name="sabores[]" value="<?= $sabor ?>" readonly><br>
                         <?php } ?>
+                        <?php endif; ?>
                    </div>
                    <div class="adicionais col-lg-6">
                        Adicionais: <br>
+                       <?php if(!empty($adicionais)): ?>
                        <?php foreach ($adicionais as $adicional ) { ?>
                           <input type="text" name="adicionais[]" value="<?= $adicional ?>" readonly><br>
                         <?php   } ?>
+                        <?php endif; ?>
                    </div>
                    <div class="bebidas col-lg-6">
                        Bebidas: <br>
+                       <?php if(!empty($bebidas)): ?>
                        <?php foreach ($bebidas as $bebida ) { ?>
                           <input type="text" name="bebidas[]" value="<?= $bebida ?>" readonly><br>
                         <?php   } ?>
+                        <?php endif; ?>
                    </div>
                    <div class="valor col-lg-6">
                        Valor total: <br>
-                       
+                       <?php if(!empty($total)): ?>
                         <span> R$ <input type="text" name="valorTotal" value="<?= strval($total) ?>"></span><br>
-                       
+                       <?php endif; ?>
                    </div>
                 </div>
             </div>

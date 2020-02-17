@@ -1,3 +1,10 @@
+<?php 
+session_start();
+ if(isset($_SESSION['nome'])){
+     
+$logado = $_SESSION['nome'];
+ }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,13 +15,7 @@
     <title>Faça seu pedido na pizzaria</title>
 </head>
 <body>
-    <?php 
-session_start();
- if(isset($_SESSION['nome'])){
-     
-$logado = $_SESSION['nome'];
- }
-?>
+    
     <?php if(isset($_GET['senha'])){ ?>
 <?php if($_GET['senha'] == 'incorreta'): ?>
         <script>alert('Senha incorreta! tente novamente')</script>

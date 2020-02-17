@@ -1,0 +1,9 @@
+footer {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  background: linear-gradient(45deg, $principal, 35%, $secundaria);
+  color: white;
+  @include font-size(30px);
+  font-weight: bolder;
+}

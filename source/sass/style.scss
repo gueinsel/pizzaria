@@ -1,0 +1,80 @@
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap");
+$principal: #d2112c;
+$secundaria: #0078ac;
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+body {
+  position: relative;
+  color: black;
+  font-family: "Quicksand", sans-serif;
+  @include font-size(16px);
+}
+.link {
+  color: $principal;
+  &:hover {
+    color: $secundaria;
+  }
+}
+section {
+  padding: 50px 0;
+}
+.titulo {
+  color: $secundaria;
+  @include font-size(55px);
+  margin-bottom: 35px;
+}
+.btn-pizzaria {
+  border-radius: 16px;
+  background: linear-gradient(45deg, $secundaria, 35%, $principal);
+  color: white;
+  padding: 10px 25px;
+  font-weight: bold;
+  border: 0;
+  display: inline-block;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+
+.card {
+  border: 2px solid $principal;
+  padding: 35px;
+  flex-direction: row;
+  align-items: center;
+  .icon {
+    width: 145px;
+    height: 145px;
+    svg {
+      fill: $principal;
+    }
+  }
+  .info {
+    padding: 0 20px;
+    @include font-size(35px);
+    span {
+      color: $secundaria;
+    }
+    input {
+      color: $secundaria;
+      border: 0;
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}
+@import "header", "footer", "form";

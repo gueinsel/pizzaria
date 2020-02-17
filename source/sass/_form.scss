@@ -1,0 +1,65 @@
+#pedirForm {
+  input[type="checkbox"] {
+    display: none;
+    &:checked {
+      & + label {
+        .card {
+          border-color: $secundaria;
+          .icon {
+            svg {
+              fill: $secundaria;
+            }
+          }
+        }
+      }
+    }
+  }
+  label {
+    margin-bottom: 2em;
+  }
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.steps {
+  text-align: center;
+  margin: 40px 0;
+  .step {
+    height: 65px;
+    width: 65px;
+    padding: 5px;
+    margin: 0 2px;
+    background: $secundaria;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+    svg {
+      fill: white;
+    }
+    &.active {
+      opacity: 1;
+    }
+    &.finish {
+      background-color: $principal;
+    }
+  }
+}
+.botoes {
+  margin-top: 15px;
+}
+.cadastrar {
+  padding: 25px;
+  color: $secundaria;
+  input {
+    width: 100%;
+    padding: 5px 15px;
+    border-radius: 16px;
+    border: 1px solid $principal;
+    margin-bottom: 15px;
+  }
+}

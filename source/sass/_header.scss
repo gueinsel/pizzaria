@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  background: linear-gradient(45deg, $secundaria, 35%, $principal);
+  color: white;
+  h1 {
+    @include font-size(25px);
+  }
+  .btn-pizzaria {
+    background: none;
+    border: 1px solid white;
+    &:nth-child(1) {
+      margin-right: 15px;
+    }
+    &:hover {
+      background-color: white;
+      color: $secundaria;
+      border-color: transparent;
+    }
+  }
+}
